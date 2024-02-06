@@ -19,6 +19,8 @@ const boxListEl = document.querySelectorAll(".boxdiv");
 let columnBoxNodeCr;
 let smallBoxNodeCr;
 let userInput = 16;
+
+
 // Function that contains a loop that creates a grid based on userInput,
 // initial value is 16x16
 // smallboxdivs receive width and height values based on a formula at time of 
@@ -39,6 +41,17 @@ function createGrid() {
 }
 createGrid();
 
+// Functionality for extra assignment
+// Creates a random RGB value, to be used in drawPixels()
+let randomRGB = [];
+function randomizeRGB() {
+    for(let i = 0; i <= 2; i++) {
+    randomRGB[i] = Math.floor(Math.random() * 255);
+    }
+    return `rgb(${randomRGB})`;
+}
+randomizeRGB();
+
 // Selector that targets all smallboxdivs, foreach loop with a mouseover event
 // to change color of boxes
 let smallBoxEl = document.querySelectorAll(".smallboxdiv");
@@ -46,7 +59,7 @@ let smallBoxEl = document.querySelectorAll(".smallboxdiv");
 function drawPixels() {
 smallBoxEl.forEach(element => {
     // console.log(element);
-    element.onmouseover = function(){element.style.backgroundColor = 'red'};
+    element.onmouseover = function(){element.style.backgroundColor = `${randomizeRGB()}`};
 });
 }
 drawPixels();
@@ -64,13 +77,16 @@ function removeAllChildNodes(parent) {
 // Reset button functionality, changes userinput variable to set new grid size,
 // removes previous grid divs and runs the createGrid function
 resetButtonEl.addEventListener('click', function(){
-    userInput = prompt("Please enter the new canvas size in pixels, up to 100");
-    smallBoxEl.forEach(element => {
-        element.style.backgroundColor = "rgb(241, 245, 245)"
-    });
-    removeAllChildNodes(boxEl);
-    createGrid();
-    smallBoxEl = document.querySelectorAll(".smallboxdiv");
-    drawPixels();
-    console.log("clicked");
+    userInput = prompt("Please enter the new canvas size in pixels, up to 100px");
+    if (userInput <= 100) {
+        smallBoxEl.forEach(element => {
+            element.style.backgroundColor = "rgb(241, 245, 245)"
+        });
+        removeAllChildNodes(boxEl);
+        createGrid();
+        smallBoxEl = document.querySelectorAll(".smallboxdiv");
+        drawPixels();
+        console.log("clicked");
+    }
 })
+

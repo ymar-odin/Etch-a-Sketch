@@ -1,5 +1,10 @@
 body {
     display: flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #970100;
 }
 
 .buttonCont {
@@ -14,7 +19,7 @@ body {
 .boxdiv {
     display: flexbox;
     display: flex;
-    flex-direction: row;;
+    flex-direction: row;
     width: 600px;
     height: 600px;
     background-color: rgb(241, 245, 245);
@@ -25,15 +30,11 @@ body {
     flex-direction: column;
     display: flex;
     flex: 1;
-    /* width: auto;
-    height: auto; */
 }
 
 .smallboxdiv {
     display: flex;
     flex: 1;
-    /* width: 37.5px;
-    height: 37.5px;  */
-    background-color: rgb(241, 245, 245);
-    border: 1px black solid;
+    background-color: #d6dee1;
+    border: 0.1px rgb(255, 255, 255) solid;
 }
