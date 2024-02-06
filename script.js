@@ -7,6 +7,7 @@ const boxEl = document.querySelector(".boxdiv");
 let rowBoxNodeCr;
 let smallBoxNodeCr;
 
+// Loop that creates a 16x16 grid
 for(let i = 0; i < 16; i++) {
     rowBoxNodeCr = document.createElement("div");
     rowBoxNodeCr.className = "rowboxdiv";
@@ -18,3 +19,12 @@ for(let i = 0; i < 16; i++) {
         document.querySelector(`#rowdiv-${[i]}`).appendChild(smallBoxNodeCr);
         }
 }
+
+// Selector that targets all smallboxdivs, foreach loop with a mouseover event
+// to change color of boxes
+const smallBoxEl = document.querySelectorAll(".smallboxdiv");
+
+smallBoxEl.forEach(element => {
+    // console.log(element);
+    element.onmouseover = function(){element.style.backgroundColor = 'red'};
+});

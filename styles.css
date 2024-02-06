@@ -4,22 +4,19 @@ body {
 
 .boxdiv {
     display: flexbox;
-    background-color: rgb(89, 89, 89);
-    /* border: 1px black solid; */
 }
 .rowboxdiv {
     display: flexbox;
     display: flex;
-    width: 160px;
-    height: 10px;
-    /* background-color: rgb(241, 245, 245);
-    border: 1px black solid; */
+    width: auto;
+    height: auto;
 }
 
 .smallboxdiv {
     display: flex;
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     background-color: rgb(241, 245, 245);
     border: 1px black solid;
+    margin: 0px;
 }
