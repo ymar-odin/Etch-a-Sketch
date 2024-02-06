@@ -2,21 +2,38 @@ body {
     display: flexbox;
 }
 
+.buttonCont {
+    display: flexbox;
+    background-color: rgb(241, 245, 245);
+}
+
+.resetbutton {
+    display: flex;
+}
+
 .boxdiv {
     display: flexbox;
-}
-.rowboxdiv {
-    display: flexbox;
     display: flex;
-    width: auto;
-    height: auto;
+    flex-direction: row;;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(241, 245, 245);
+
+}
+.columnboxdiv {
+    display: flexbox;
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    /* width: auto;
+    height: auto; */
 }
 
 .smallboxdiv {
     display: flex;
-    width: 16px;
-    height: 16px;
+    flex: 1;
+    /* width: 37.5px;
+    height: 37.5px;  */
     background-color: rgb(241, 245, 245);
     border: 1px black solid;
-    margin: 0px;
 }
